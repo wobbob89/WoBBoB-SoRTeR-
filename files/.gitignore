@@ -44,3 +44,6 @@ htmlcov/
 # Temporary files
 .tmp/
 temp/
+
+# Demo files
+demo_plugins.py
