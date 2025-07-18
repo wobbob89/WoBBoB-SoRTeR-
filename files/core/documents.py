@@ -1,7 +1,12 @@
 import os
+import logging
 import pytesseract
 from PIL import Image
 import re
+
+# Configure logging for documents module
+logger = logging.getLogger(__name__)
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
 class DocumentManager:
     def __init__(self, folder):
@@ -25,6 +30,7 @@ class DocumentManager:
                     if any(kw in text for kw in keywords):
                         sensitive += 1
                     count += 1
-                except Exception:
-                    pass
+                except Exception as e:
+                    logger.error(f"Error processing document {path}: {str(e)}")
+                    continue
         return count, sensitive
