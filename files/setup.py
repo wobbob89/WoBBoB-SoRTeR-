@@ -1,12 +1,10 @@
-[build-system]
-requires = ["setuptools", "wheel"]
-build-backend = "setuptools.build_meta"
+from setuptools import setup, find_packages
 
-[project]
-name = "WoBBoB-SoRTeR"
-version = "0.1.0"
-description = "A short description of the WoBBoB-SoRTeR project."
-authors = [
-    {name = "wobbob89"},
-]
-dependencies = []
+setup(
+    name="WoBBoB-SoRTeR",
+    version="0.1.0",
+    packages=find_packages(),
+    install_requires=[],
+    author="wobbob89",
+    description="A short description of the WoBBoB-SoRTeR project.",
+)
