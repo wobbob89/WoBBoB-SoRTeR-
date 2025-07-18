@@ -14,7 +14,8 @@ pyzbar
 pandas
 nltk
 requests
-pycryptodome
+cryptography
+nudenet
 pyyaml
 tqdm
 soundfile

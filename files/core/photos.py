@@ -25,6 +25,13 @@ class PhotoManager:
         return faces_found, nsfw_count
 
     def nsfw_scan(self, path):
-        # Placeholder: always returns False
-        # Integrate real NSFW classifier here
-        return False
+        """Scan image for NSFW content using the plugin."""
+        try:
+            # Import the NSFW plugin
+            from plugins.nsfw import is_nsfw
+            return is_nsfw(path)
+        except Exception as e:
+            # Log error but don't crash
+            import logging
+            logging.warning(f"NSFW scanning failed for {path}: {e}")
+            return False
